@@ -4,11 +4,11 @@
 
 ![Celebrity Image Classifier](Imge_classifier_website.png)
 
-# Sports Person Classifier
+# Celebrity Person Classifier
 
-A machine learning web application that identifies a sports person from an uploaded image.
+A machine learning web application that identifies a Celebrity person from an uploaded image.
 
-## Recognized Athletes
+## Recognized Celebrity
 
 - Jennifer Lawrence
 - Megan Fox
@@ -20,8 +20,7 @@ A machine learning web application that identifies a sports person from an uploa
 
 - Upload or drag and drop an image
 - Image preview before classification
-- Displays predicted sports person
-- Shows probability/confidence scores
+- Displays predicted Celebrity person
 - Shows an error message if a face or both eyes cannot be detected
 - Responsive modern user interface
 
