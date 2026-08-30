@@ -10,11 +10,11 @@ A machine learning web application that identifies a sports person from an uploa
 
 ## Recognized Athletes
 
-- Lionel Messi
-- Maria Sharapova
-- Roger Federer
-- Serena Williams
-- Virat Kohli
+- Jennifer Lawrence
+- Megan Fox
+- Natalie Portman
+- Sandra Bullock
+- Scarlett Johansson
 
 ## Features
 
