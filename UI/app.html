@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="Celebrity Image Classifier">
+ <title>Celebrity Image Classifier</title>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet">
+
+ <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+ <div class="page-glow glow-one"></div>
+ <div class="page-glow glow-two"></div>
+
+ <main class="shell">
+  <header class="hero">
+   <a class="brand" href="#top" aria-label="Celebrity Image Classifier home">
+    <span class="brand-mark">SP</span>
+    <span>Vision<span class="brand-dot">.</span></span>
+   </a>
+
+   <span class="status-pill"><i></i> AI vision ready</span>
+
+   <div class="hero-copy" id="top">
+    <p class="eyebrow">Image intelligence / 05 Actresses</p>
+    <h1>Who’s in the <em>frame?</em></h1>
+    <p class="hero-text">
+     Upload a portrait and let our vision model identify the celebrity behind the image.
+    </p>
+   </div>
+
+   <div class="hero-orbit" aria-hidden="true">
+    <span></span>
+    <b>01</b>
+   </div>
+  </header>
+
+  <section class="athletes" aria-labelledby="athletes-title">
+   <div class="section-heading">
+    <div>
+     <p class="eyebrow">The roster</p>
+     <h2 id="athletes-title">Trained to recognize legends.</h2>
+    </div>
+   </div>
+
+   <div class="athlete-grid">
+    <article class="athlete-card">
+     <img src="./images/jenifer.jpg" alt="Jennifer Lawrence">
+     <div>
+      <strong>Jennifer Lawrence"</strong>
+      <span>Actress</span>
+     </div>
+     <b>01</b>
+    </article>
+
+    <article class="athlete-card">
+     <img src="./images/megan_fox.jpg" alt="Megan Fox">
+     <div>
+      <strong>Megan Fox</strong>
+      <span>Actress</span>
+     </div>
+     <b>02</b>
+    </article>
+
+    <article class="athlete-card">
+     <img src="./images/natalie_portman.jpg" alt="Natalie Portman">
+     <div>
+      <strong>Natalie Portman</strong>
+      <span>Actress</span>
+     </div>
+     <b>03</b>
+    </article>
+
+    <article class="athlete-card">
+     <img src="./images/sandra_bulllock.jpg" alt="Sandra Bullock">
+     <div>
+      <strong>Sandra Bullock</strong>
+      <span>Actress</span>
+     </div>
+     <b>04</b>
+    </article>
+
+    <article class="athlete-card">
+     <img src="./images/scarlett_johnson.jpg" alt="Scarlett Johansson">
+     <div>
+      <strong>Scarlett Johansson</strong>
+      <span>Actress</span>
+     </div>
+     <b>05</b>
+    </article>
+   </div>
+  </section>
+
+  <section class="workspace" aria-label="Image classification workspace">
+   <div class="upload-panel glass-panel">
+    <div class="panel-top">
+     <div>
+      <p class="eyebrow">Step 01</p>
+      <h2>Drop your image</h2>
+     </div>
+     <span class="format-label">JPG · PNG · WEBP</span>
+    </div>
+
+    <input id="image-input" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+
+    <label for="image-input" id="drop-zone" class="drop-zone" tabindex="0">
+     <div class="upload-icon">
+      <img src="./images/upload.png" alt=""
+       onerror="this.style.display='none';this.parentElement.classList.add('fallback-icon')">
+     </div>
+
+     <div class="drop-copy">
+      <strong>Drag & drop an image here</strong>
+      <span>or <u>browse your device</u></span>
+     </div>
+
+     <div class="image-preview" id="image-preview" hidden>
+      <img id="preview-image" alt="Selected image preview">
+      <button id="clear-image" type="button" aria-label="Remove selected image">×</button>
+     </div>
+    </label>
+
+    <p class="upload-note">For best results, use a clear front-facing portrait.</p>
+
+    <button id="classify-button" class="classify-button" type="button" disabled>
+     <span>Classify image</span>
+     <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 12h13M13 6l6 6-6 6" />
+     </svg>
+    </button>
+   </div>
+
+   <aside class="result-panel glass-panel" aria-live="polite">
+    <div class="panel-top">
+     <div>
+      <p class="eyebrow">Step 02</p>
+      <h2>Prediction</h2>
+     </div>
+     <span id="result-state" class="result-state">Awaiting image</span>
+    </div>
+
+    <div id="empty-result" class="result-empty">
+     <div class="scanner"><span></span></div>
+     <p>Your result will appear here.</p>
+    </div>
+
+    <div id="success-result" class="result-success" hidden>
+     <p class="prediction-label">Detected Celebrity</p>
+     <h3 id="prediction-name">—</h3>
+
+     <div class="confidence">
+      <span>Model confidence</span>
+      <strong id="confidence-value">—</strong>
+     </div>
+
+     <div id="probability-list" class="probability-list" aria-label="Probability scores"></div>
+    </div>
+
+    <div id="error-result" class="result-error" hidden>
+     <div class="error-symbol">!</div>
+     <h3>Unable to identify a face</h3>
+     <p>We need a clear image with one face and both eyes visible. Try another photo.</p>
+    </div>
+   </aside>
+  </section>
+ </main>
+
+ <footer>
+  CELEBRITY IMAGE CLASSIFIER <span>•</span> POWERED BY COMPUTER VISION
+ </footer>
+
+ <script src="./app.js"></script>
+</body>
+
+</html>
